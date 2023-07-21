@@ -2,6 +2,9 @@
 	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	export let data
+
+	console.log(data)
 </script>
 
 <svelte:head>
@@ -20,6 +23,14 @@
 
 		to your new<br />SvelteKit app
 	</h1>
+
+	<h2>Menu Items</h2>
+	
+	<ul>
+    {#each data.menu as menuItem}
+      <li>{menuItem.name}</li>
+    {/each}
+  </ul>
 
 	<h2>
 		try editing <strong>src/routes/+page.svelte</strong>
